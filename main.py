@@ -75,9 +75,9 @@ class Player:
                 while canReroll == True and select == "1":
                     canReroll, rerollIdList= self.identify(rerollIdList)
                     if canReroll == False:
-                        print(f"[purple][{self.name}][/purple] rolled: {self.dice} - [magenta]{self.pointsToAdd}p[/magenta]  |  [magenta]{self.points}p[/magenta]")
+                        richPrint(f"[purple][{self.name}][/purple] rolled: {self.dice} - [magenta]{self.pointsToAdd}p[/magenta]  |  [magenta]{self.points}p[/magenta]")
                     else:
-                        print(f"[purple][{self.name}][/purple] rolled: {self.dice} - [magenta]{self.pointsToAdd}p[/magenta]  |  [magenta]{self.points}p[/magenta]")
+                        richPrint(f"[purple][{self.name}][/purple] rolled: {self.dice} - [magenta]{self.pointsToAdd}p[/magenta]  |  [magenta]{self.points}p[/magenta]")
                         select = input("Enter 0 to write the points, enter 1 to reroll the dice -> ")
                     
                         if select == "0":

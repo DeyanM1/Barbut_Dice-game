@@ -203,7 +203,7 @@ if __name__ == '__main__':
             currentPlayer.move()
             
             if currentPlayer.points > finishPoints:
-                richPrint(f"######## [purple][{currentPlayer.name}][/purple] won the game with [magenta]{currentPlayer.points}p[/magenta] ########")
+                richPrint(f"######## [purple][{currentPlayer.name}][/purple] won the game with [magenta]{currentPlayer.points}p[/magenta] in [magenta]{round}p[/magenta] ########")
                 winners = players.sort(key = lambda player: player.points, reverse=True)
                 
                 for player in range(len(players)):

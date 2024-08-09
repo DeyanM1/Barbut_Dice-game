@@ -91,7 +91,7 @@ class Player:
                                 testDice.append(self.dice[id])
                                 
                             if testValid(testDice) == False:
-                                print(f"[purple][{self.name}][/purple] rolled: {self.dice} No valid nums - [magenta]0p[/magenta]  |  [magenta]{self.points}p[/magenta]")
+                                richPrint(f"[purple][{self.name}][/purple] rolled: {self.dice} No valid nums - [magenta]0p[/magenta]  |  [magenta]{self.points}p[/magenta]")
                                 self.pointsToAdd = 0
                                 canReroll = False
         
@@ -108,8 +108,11 @@ class Player:
                 case 3: self.pointsToAdd += 300
                 case 4: self.pointsToAdd += 400
                 case 5: self.pointsToAdd += 500
-                case 6: self.points = 0
-            
+                case 6: 
+                    self.points = 0
+                    richPrint(f"[purple][{self.name}][/purple] rolled: {self.dice} Points are reset - [magenta]0p[/magenta]  |  [magenta]{self.points}p[/magenta]")
+                    return False, rerollIdList
+                
             rerollIdList = [0, 1, 2]    
             return True, rerollIdList
         elif self.dice in ROAD_DICES:
@@ -170,7 +173,7 @@ def displayFinalScore(players:list):
 
 
 
-places = ["1st 👑", "2nd 🥈", "3rd 🥉", "4th", "5th", "6th", "7th", "8th", "9th", "10th"]
+places = ["1st 👑", "2nd 🥈", "3rd 🥉", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"]
 
 ######### Play ########
 if __name__ == '__main__':   
